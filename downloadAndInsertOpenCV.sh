@@ -1,10 +1,11 @@
 # taken from https://github.com/brainhubeu/react-native-opencv-tutorial/blob/master/downloadAndInsertOpenCV.sh
 
 # ios
-version=4.1.0
-base_url=https://razaoinfo.dl.sourceforge.net/project/opencvlibrary/${version}/
+version=4.5.2
+# base_url=https://razaoinfo.dl.sourceforge.net/project/opencvlibrary/${version}/
+base_url=https://jaist.dl.sourceforge.net/project/opencvlibrary/${version}
 
-wget ${base_url}/opencv-${version}-ios-framework.zip
+curl ${base_url}/opencv-${version}-ios-framework.zip -o opencv-${version}-ios-framework.zip
 unzip -a opencv-${version}-ios-framework.zip
 cd ios
 cp -r ./../opencv2.framework ./
@@ -14,7 +15,7 @@ rm -rf opencv2.framework/
 
 # android
 
-wget ${base_url}/opencv-${version}-android-sdk.zip
+curl ${base_url}/opencv-${version}-android-sdk.zip -o opencv-${version}-android-sdk.zip
 unzip opencv-${version}-android-sdk.zip
 cd android/app/src/main
 mkdir jniLibs
